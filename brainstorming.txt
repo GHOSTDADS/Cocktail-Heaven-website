@@ -1,0 +1,19 @@
+cocktail recipe DB
+leave comments or thumbs up
+edit recipies
+delete recipies
+
+//cron job?? npm cronjob
+
+
+login > save new recipes
+leave comments on others
+leave thumbs up others
+how many times made/drunk
+
+a drink count(highscore)
+
+look for a npm module like date 
+
+use a API to pull recipies
+
