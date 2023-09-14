@@ -4,11 +4,8 @@
 {{#each cocktails as |cocktail| }}
 <div class="card p-4 m-3" style="background-color: rgba(255, 221, 87, 0.3)">
   <div class="card content" style="background-color: rgba(255, 221, 87, 0.5)">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji category}}}
-      <a class="p-4" href="/cocktail/{{cocktail.id}}">{{cocktail.name}}</a>
-    </h2>
+    <h2 style="text-align:center" class="title is-1">{{{get_emoji category}}}</h2>
+    <h2 style="text-align:center" ><a class="p-4" href="/cocktail/{{cocktail.id}}">{{cocktail.name}}</a></h2>
     <p class="p-4">Created by {{cocktail.user.name}} on {{format_date cocktail.date_created}}</p>
   </div>
   <div class="p-4">
