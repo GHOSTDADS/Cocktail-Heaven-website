@@ -1,43 +1,101 @@
-<h1 class="title is-1">Title 1</h1>
+<div class="column is-half is-offset-one-quarter">
 
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
+</div><h1 class="title is-1">Get Started - yeah yeah</h1>
+
+  <div class="card $container-max-width">
+    {{!-- Login --}}
+    <h2 class="title is-2 p-4">Login</h2>
+    <div class="card-content">
+
+      <div class="field">
+        <label class="label">Email:</label>
+        <div class="control has-icons-left has-icons-right"></div>
+        <input id="username" class="input is-danger" type="email" placeholder="Email input" value="youremail@">
+        
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+
+        <span class="icon is-small is-right">
+          <i class="fas fa-exclamation-triangle"></i>
+        </span>
+
+      </div>
+        <p class="help is-danger">This email is invalid</p>
+        
+
+
+
+      <div class="field">
+        <label class="label">Password:</label>
+        <input id="password" class="input is-success" type="password"/>
       </div>
       <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <button class="button is-link" type="submit">login</button>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
+    </div>
   </div>
-  <div class="login-card">
-    <h2 class="page-title">Signup</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
+
+{{!-- Signup --}}
+  <div class="card $container-max-width">
+    <h2 class="title is-2 p-4">Signup</h2>
+    <div class="card-content">
+
+<div class="field">
+  <label class="label">Username</label>
+
+  <div class="control has-icons-left has-icons-right">
+    <input id="username-signup" class="input is-success" type="text" placeholder="Text input" value="make a new username">
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </div>
+  <p class="help is-success">This username is available</p>
+</div>
+
+<div class="field">
+  <label class="label">Email</label>
+  <div class="control has-icons-left has-icons-right">
+    <input id="email-signup" class="input is-danger" type="email" placeholder="Email input" value="youremail@">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+  </div>
+  <p class="help is-danger">This email is invalid</p>
+</div>
+
+ <div class="field">
+        <label class="label">Password:</label>
+        <input id="password-signup" class="input is-success" type="password" >
       </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox">
+      I agree to the <a href="#">terms and conditions</a>
+    </label>
   </div>
 </div>
 
 
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+
+</div>
 <script src="/js/login.js"></script>
