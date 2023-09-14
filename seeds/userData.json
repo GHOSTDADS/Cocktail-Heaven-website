@@ -9,17 +9,12 @@
       "email": "Alex@gmail.com",
       "password": "password12345"
     },
-   {
-        "name": "James",
-        "email": "James@aol.com",
-        "password": "password12345"
-    },
     {
         "name": "Sam",
         "email": "Sam@hotmail.com",
         "password": "password12345"
     },
-      {
+  {
         "name": "Christine",
         "email": "Christine@aol.com",
         "password": "password12345"
