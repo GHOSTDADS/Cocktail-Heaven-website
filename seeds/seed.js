@@ -13,7 +13,7 @@ const seedDatabase = async () => {
     });
 
     for (const cocktail of cocktailData) {
-        await Cocktail.bulkCreate({
+        await Cocktail.create({
             ...cocktail,
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
