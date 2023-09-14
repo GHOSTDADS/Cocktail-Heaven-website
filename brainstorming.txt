@@ -1,4 +1,5 @@
 cocktail recipe DB
+cocktail heaven
 leave comments or thumbs up
 edit recipies
 delete recipies
@@ -17,3 +18,18 @@ look for a npm module like date
 
 use a API to pull recipies
 
+users model,
+drinks model,
+comments model
+
+Alex:
+models 
+config 
+seeds
+view
+
+Cameron:
+connections
+controllers
+server
+view
