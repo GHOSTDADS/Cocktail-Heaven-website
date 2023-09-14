@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 // TODO: Add a comment describing the functionality of the withAuth middleware
 router.get('/', withAuth, async (req, res) => {
+  
   try {
     const cocktailData = await Cocktail.findAll({
     //  include: [
@@ -27,20 +28,21 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/cocktail/:id', withAuth, async (req, res) => {
+  console.log("test");
   try {
     const cocktailData = await Cocktail.findByPk(req.params.id,{
-    //  include: [
-    //   {
-    //     model: User,
-    //     attributes: ['name']
-    //   }
-    //  ]    
+     include: [
+      {
+        model: User,
+        attributes: ['name']
+      }
+     ]    
     });
 
-    const cocktails = cocktailData.get({ plain: true });
+    const cocktail = cocktailData.get({ plain: true });
 
     res.render('cocktail', {
-      ...cocktails,
+      ...cocktail,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

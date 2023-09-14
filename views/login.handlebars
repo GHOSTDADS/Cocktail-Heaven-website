@@ -1,45 +1,45 @@
-<div class="column is-half is-offset-one-quarter">
+<div class="column is-half is-offset-one-quarter ">
 
 </div><h1 class="title is-1">Get Started - yeah yeah</h1>
 
-  <div class="card $container-max-width">
+  <div class="card $container-max-width mb-6" style="background-color: rgba(255, 221, 87, 0.5)">
     {{!-- Login --}}
     <h2 class="title is-2 p-4">Login</h2>
-    <div class="card-content">
+    <form class="form login-form card-content">
 
       <div class="field">
-        <label class="label">Email:</label>
+        <label class="title is-6">Email:</label>
         <div class="control has-icons-left has-icons-right"></div>
-        <input id="username" class="input is-danger" type="email" placeholder="Email input" value="youremail@">
+        <input id="email-login" class="input is-danger" type="email" placeholder="Email input" value="youremail@">
         
-        <span class="icon is-small is-left">
+        {{!-- <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
 
         <span class="icon is-small is-right">
           <i class="fas fa-exclamation-triangle"></i>
-        </span>
+        </span> --}}
 
       </div>
-        <p class="help is-danger">This email is invalid</p>
+        {{!-- <p class="help is-danger">This email is invalid</p> --}}
         
 
 
 
       <div class="field">
         <label class="label">Password:</label>
-        <input id="password" class="input is-success" type="password"/>
+        <input id="password-login" class="input is-success" type="password"/>
       </div>
       <div class="form-group">
         <button class="button is-link" type="submit">login</button>
       </div>
-    </div>
+    </form>
   </div>
 
 {{!-- Signup --}}
-  <div class="card $container-max-width">
+  <div class="card $container-max-width" style="background-color: rgba(255, 221, 87, 0.5)">
     <h2 class="title is-2 p-4">Signup</h2>
-    <div class="card-content">
+    <form class="form signup-form card-content">
 
 <div class="field">
   <label class="label">Username</label>
@@ -93,7 +93,7 @@
     <button class="button is-link is-light">Cancel</button>
   </div>
 </div>
-  </div>
+  </form>
 </div>
 </div>
 
