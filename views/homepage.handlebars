@@ -1,24 +1,24 @@
 <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
+<section class="columns is-three-quarters p-6">
+
+{{#each cocktails as |cocktail| }}
+<div class="card p-4 m-3" style="background-color: rgba(255, 221, 87, 0.3)">
+  <div class="card content" style="background-color: rgba(255, 221, 87, 0.5)">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{cocktail.id}}">{{cocktail.name}}</a>
+      {{{get_emoji category}}}
+      <a class="p-4" href="/cocktail/{{cocktail.id}}">{{cocktail.name}}</a>
     </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{cocktail.user.name}} on {{format_date cocktail.date_created}}</p>
+    <p class="p-4">Created by {{cocktail.user.name}} on {{format_date cocktail.date_created}}</p>
   </div>
-  <div class="col-md-7">
+  <div class="p-4">
     <p>
-      {{cocktail.ingredients}}
-    </p>
+      {{cocktail.description}}
+      {{cocktail.category}}
+      {{cocktail.alcoholic}}
+        </p>
   </div>
 </div>
 {{/each}}
+
+</section>

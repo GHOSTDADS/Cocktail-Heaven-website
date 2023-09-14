@@ -1,15 +1,19 @@
 module.exports = {
-  get_emoji: () => {
-    const randomNum = Math.random();
-    let book = "📗";
+  
+  get_emoji: function(category) {
+    console.log("Category is:", category);
 
-    if (randomNum > 0.7) {
-      book = "📘";
-    } else if (randomNum > 0.4) {
-      book = "📙";
-    }
+    const cocktail_emojis = {
+      "Contemporary Classics": "🍸",
+      "Unforgettables": "🍹",
+      "Tropical": "🌴",
+      "Dry": "🧉",
+      "Sweet": "🍷"
+    };
 
-    return `<span for="img" aria-label="book">${book}</span>`;
+    const emoji = cocktail_emojis[category] || "📗"; // Default to book emoji if category is not found
+    
+    return `<span for="img" aria-label="${category}">${emoji}</span>`;
   },
 
   format_date: (date) => {
@@ -19,4 +23,5 @@ module.exports = {
   format_amount: (amount) => {
     return parseInt(amount).toLocaleString();
   }
+
 };

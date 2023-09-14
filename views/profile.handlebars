@@ -1,43 +1,120 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+<div class="card mt-6 notification is-warning">
+  <div class="card-content">
+    <h2 class="title is-2">Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
+<div class="card-content" style="background-color: rgba(255, 221, 87, 0.3)">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3 class="title is-3">Add a new cocktail! oh hell yeh!</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+    <form class="form new-cocktail-form">
+      <div class="field">
+        <label class="title is-6">Cocktail name:</label>
+        <input class="form-input" type="text" id="cocktail-name" name="cocktail-name" />
       </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      
+
+      <div class="field">
+        <label class="title is-6">Description:</label>
+        <textarea class="form-input" id="cocktail-desc" name="cocktail-desc"></textarea>
       </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+
+         <div class="field">
+        <label class="select title is-6">Category:</label>
+        <select>
+          <option>Contemporary Classics</option>
+          <option>Unforgettables</option>
+          <option>Tropical</option>
+          <option>Dry</option>
+          <option>Sweet</option>
+          <option>Tropical</option>
+        </select>
       </div>
+
+         <div class="field">
+        <label class="title is-6">Instructions:</label>
+        <textarea class="form-input" id="cocktail-instr" name="cocktail-instr"></textarea>
+      </div>
+
+         <div class="field">
+        <label class=" checkbox title is-6">Alcoholic:</label>
+        <input type="checkbox" id="cocktail-alc" name="cocktail-alc"></input >
+      </div>
+
+         <div class="field">
+        <label class="title is-6">Ingredient 1:</label>
+        <input  class="form-input" id="cocktail-ing1" name="cocktail-ing1"></input>
+      </div>
+
+ <div class="field">
+        <label class="title is-6">Ingredient 2:</label>
+        <input  class="form-input" id="cocktail-ing2" name="cocktail-ing2"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 3:</label>
+        <input  class="form-input" id="cocktail-ing3" name="cocktail-ing3"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 1:</label>
+        <input  class="form-input" id="cocktail-ing1" name="cocktail-ing1"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 4:</label>
+        <input  class="form-input" id="cocktail-ing4" name="cocktail-ing4"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 5:</label>
+        <input  class="form-input" id="cocktail-ing5" name="cocktail-ing5"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 6:</label>
+        <input  class="form-input" id="cocktail-ing6" name="cocktail-ing6"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 7:</label>
+        <input  class="form-input" id="cocktail-ing7" name="cocktail-ing7"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 8:</label>
+        <input  class="form-input" id="cocktail-ing8" name="cocktail-ing8"></input>
+      </div>
+
+       <div class="field">
+        <label class="title is-6">Ingredient 1:</label>
+        <input  class="form-input" id="cocktail-ing9" name="cocktail-ing9"></input>
+      </div>
+
+      <div class="field">
+        <label class="title is-6">Ingredient 10:</label>
+        <input  class="form-input" id="cocktail-ing10" name="cocktail-ing10"></input>
+      </div>
+
+
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="button is-link">Create</button>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if cocktails.length}}
+  <div class="card mt-6">
+    <h3 class="title is-4">Current Cocktails you have added:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+    {{#each cocktails as |cocktail|}}
+    <div class="card">
+      <div class="card-content">
+        <h4><a href="/cocktails/{{cocktail.id}}">{{cocktail.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="button btn-danger" data-id="{{cocktail.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
