@@ -16,7 +16,7 @@ Cocktail.init(
             allowNull: false,
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
         },
         category: {
             type: DataTypes.STRING,
@@ -27,7 +27,7 @@ Cocktail.init(
             defaultValue: DataTypes.NOW,
         },
         instructions: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         alcoholic: {
