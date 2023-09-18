@@ -8,7 +8,28 @@
 // document
 //   .querySelector('.cocktail-form')
 //   .addEventListener('submit', submissionFormHandler);
-
+function executeRoute() {
+    // Simulate route being successful
+    if (true) {  // replace 'true' with your route success condition
+      displaySuccessMessage("Cocktail added!! nice JORB!!");
+    } else {
+      // Handle failure
+    }
+  }
+  
+  function displaySuccessMessage(message) {
+    const modal = document.getElementById("modal");
+    const modalMessage = document.getElementById("modal-message");
+    const closeModal = modal.querySelector(".modal-close");
+  
+    modalMessage.textContent = message;
+    modal.classList.add("is-active");
+  
+    closeModal.addEventListener("click", function() {
+      modal.classList.remove("is-active");
+    });
+  }
+  
 document.addEventListener('DOMContentLoaded', function () {
     const cocktailSubmit = document.getElementById('cocktail-form');
     const ingredientForm = document.getElementById('ingredients');
@@ -25,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         newControl.classList.add('control');
         newInput.classList.add('input');
         newInput.type = 'text';
-        newInput.name = `ingredient${ingredientCounter}`;
+        newInput.name = `Ingredient${ingredientCounter}`;
         newInput.placeholder = `Ingredient ${ingredientCounter}`;
         newControl.appendChild(newInput);
         newDiv.appendChild(newControl);
@@ -40,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const [key, value] of formData.entries()) {
             ingredients[key] = value;
         }
-        
         console.log(JSON.stringify(ingredients));
         // Send ingredients data to your backend API using curl or fetch
         // Example using fetch:
@@ -55,9 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             // Handle the response from the server
             console.log(data);
+            executeRoute();
         })
         .catch(error => {
             console.error('Error:', error);
         });
     });
 });
+
