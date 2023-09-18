@@ -8,33 +8,38 @@
     <form class="form login-form card-content">
 
       <div class="field">
-        <label class="title is-6">Email:</label>
-        <div class="control has-icons-left has-icons-right"></div>
+    <label class="title is-6">Email:</label>
+    <div class="control has-icons-left has-icons-right">
         <input id="email-login" class="input is-danger" type="email" placeholder="Email input" value="youremail@">
-        
-        {{!-- <span class="icon is-small is-left">
+        <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
-
         <span class="icon is-small is-right">
           <i class="fas fa-exclamation-triangle"></i>
-        </span> --}}
+        </span>
+    </div>
+    <!-- <p class="help is-danger">This email is invalid</p> -->
+</div>
 
-      </div>
         {{!-- <p class="help is-danger">This email is invalid</p> --}}
         
 
 
-
-      <div class="field">
-        <label class="label">Password:</label>
+<div class="field">
+    <label class="label">Password:</label>
+    <div class="control has-icons-left">
         <input id="password-login" class="input is-success" type="password"/>
-      </div>
-      <div class="form-group">
-        <button class="button is-link" type="submit">login</button>
-      </div>
-    </form>
-  </div>
+        <span class="icon is-small is-left">
+            <i class="fas fa-key"></i>
+        </span>
+    </div>
+</div>
+<div class="form-group">
+    <button class="button is-link" type="submit">login</button>
+</div>
+</form>
+</div>
+
 
 {{!-- Signup --}}
   <div class="card $container-max-width" style="background-color: rgba(255, 221, 87, 0.5)">
@@ -70,10 +75,15 @@
   <p class="help is-danger">This email is invalid</p>
 </div>
 
- <div class="field">
-        <label class="label">Password:</label>
-        <input id="password-signup" class="input is-success" type="password" >
-      </div>
+<div class="field">
+    <label class="label">Password:</label>
+    <div class="control has-icons-left">
+        <input id="password-signup" class="input is-success" type="password">
+        <span class="icon is-small is-left">
+            <i class="fas fa-key"></i>
+        </span>
+    </div>
+</div>
 
 <div class="field">
   <div class="control">
