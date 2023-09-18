@@ -31,9 +31,8 @@ Cocktail.init(
             allowNull: false,
         },
         alcoholic: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: true,
         },
         Ingredient1: {
             type: DataTypes.STRING,
@@ -42,12 +41,6 @@ Cocktail.init(
             type: DataTypes.STRING,
         },
         Ingredient3: {
-            type: DataTypes.STRING,
-        },
-        Ingredient4: {
-            type: DataTypes.STRING,
-        },
-        Ingredient4: {
             type: DataTypes.STRING,
         },
         Ingredient4: {

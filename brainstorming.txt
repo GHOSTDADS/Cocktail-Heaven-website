@@ -33,3 +33,10 @@ connections
 controllers
 server
 view
+
+sign up page clean up
+liking cocktails
+adding cocktails -- done!!
+deleting cocktails
+cocktail links
+responsive
