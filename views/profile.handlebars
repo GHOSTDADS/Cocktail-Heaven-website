@@ -17,7 +17,7 @@
 <div class="field">
   <label class="label" for="ct-name">Cocktail Name</label>
   <div class="control">
-    <input id="ct-name" name="ct-name" type="text" placeholder="Enter the name of your cocktail" class="input " required="">
+    <input id="ct-name" name="name" type="text" placeholder="Enter the name of your cocktail" class="input" required="">
   </div>
 </div>
 
@@ -25,7 +25,7 @@
 <div class="field">
   <label class="label" for="ct-desc">Cocktail Description</label>
   <div class="control">                     
-    <textarea class="textarea" id="ct-desc" name="ct-desc">Enter a description for your yummy cocktail here!</textarea>
+    <textarea class="textarea" id="ct-desc" name="description">Enter a description for your yummy cocktail here!</textarea>
   </div>
 </div>
 
@@ -34,7 +34,7 @@
   <label class="label" for="ct-cat">Cocktail Category</label>
   <div class="control">
   	<div class="select">
-	    <select id="ct-cat" name="ct-cat" class="">
+	    <select id="ct-cat" name="category" class="">
 	      <option>Contemporary Classics</option>
 	      <option>Unforgettables</option>
 	      <option>Tropical</option>
@@ -49,7 +49,7 @@
 <div class="field">
   <label class="label" for="ct-instr">Cocktail Instructions</label>
   <div class="control">                     
-    <textarea class="textarea" id="ct-instr" name="ct-instr">How do you make your cocktail?</textarea>
+    <textarea class="textarea" id="ct-instr" name="instructions">How do you make your cocktail?</textarea>
   </div>
 </div>
 
@@ -58,23 +58,23 @@
   <label class="label" for="ct-alc">Please choose one</label>
   <div class="control">
     <label class="radio" for="ct-alc-0">
-      <input type="radio" name="ct-alc" id="ct-alc-0" value="Alcoholic" checked="checked" required="required">
+      <input type="radio" name="alcoholic" id="ct-alc-0" value="Alcoholic" checked="checked" required="required">
       Alcoholic
     </label>
     <label class="radio" for="ct-alc-1">
-      <input type="radio" name="ct-alc" id="ct-alc-1" value="Non-Alcoholic" required="required">
+      <input type="radio" name="alcoholic" id="ct-alc-1" value="Non-Alcoholic" required="required">
       Non-Alcoholic
     </label>
   </div>
 </div>
 <!-- Text input-->
 <div id="ingredients">
-<div class="field">
-  <button type="button" class="button is-warning my-3" id="addIngredient">Add Ingredient</button>
+  <div class="field">
+  <button type="button" class="button is-warning my-3" id="addIngredient">Add   Ingredient</button>
   <div class="control">
-    <input id="ingredient1" name="Ingredient 1" type="text" placeholder="Ingredient 1" class="input " required="">
+    <input id="Ingredient1" name="Ingredient 1" type="text" placeholder="Ingredient 1" class="input " required="">
   </div>
-</div>
+  </div>
 </div>
 
 <div class="form-group">
@@ -101,5 +101,12 @@
   </div>
   {{/if}}
 </div>
-
+<div id="modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- This is where the message will be placed -->
+    <div class="notification is-success" id="modal-message"></div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
 <script src="./js/profile.js"></script>
