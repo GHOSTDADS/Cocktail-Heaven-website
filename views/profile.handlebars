@@ -4,105 +4,85 @@
   </div>
 </div>
 
+<div class="divider is-warning"></div>
+
+
 <div class="card-content" style="background-color: rgba(255, 221, 87, 0.3)">
   <div class="col-md-6">
     <h3 class="title is-3">Add a new cocktail! oh hell yeh!</h3>
 
-    <form class="form new-cocktail-form">
-      <div class="field">
-        <label class="title is-6">Cocktail name:</label>
-        <input class="form-input" type="text" id="cocktail-name" name="cocktail-name" />
-      </div>
-      
-
-      <div class="field">
-        <label class="title is-6">Description:</label>
-        <textarea class="form-input" id="cocktail-desc" name="cocktail-desc"></textarea>
-      </div>
-
-         <div class="field">
-        <label class="select title is-6">Category:</label>
-        <select>
-          <option>Contemporary Classics</option>
-          <option>Unforgettables</option>
-          <option>Tropical</option>
-          <option>Dry</option>
-          <option>Sweet</option>
-          <option>Tropical</option>
-        </select>
-      </div>
-
-         <div class="field">
-        <label class="title is-6">Instructions:</label>
-        <textarea class="form-input" id="cocktail-instr" name="cocktail-instr"></textarea>
-      </div>
-
-         <div class="field">
-        <label class=" checkbox title is-6">Alcoholic:</label>
-        <input type="checkbox" id="cocktail-alc" name="cocktail-alc"></input >
-      </div>
-
-         <div class="field">
-        <label class="title is-6">Ingredient 1:</label>
-        <input  class="form-input" id="cocktail-ing1" name="cocktail-ing1"></input>
-      </div>
-
- <div class="field">
-        <label class="title is-6">Ingredient 2:</label>
-        <input  class="form-input" id="cocktail-ing2" name="cocktail-ing2"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 3:</label>
-        <input  class="form-input" id="cocktail-ing3" name="cocktail-ing3"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 1:</label>
-        <input  class="form-input" id="cocktail-ing1" name="cocktail-ing1"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 4:</label>
-        <input  class="form-input" id="cocktail-ing4" name="cocktail-ing4"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 5:</label>
-        <input  class="form-input" id="cocktail-ing5" name="cocktail-ing5"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 6:</label>
-        <input  class="form-input" id="cocktail-ing6" name="cocktail-ing6"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 7:</label>
-        <input  class="form-input" id="cocktail-ing7" name="cocktail-ing7"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 8:</label>
-        <input  class="form-input" id="cocktail-ing8" name="cocktail-ing8"></input>
-      </div>
-
-       <div class="field">
-        <label class="title is-6">Ingredient 1:</label>
-        <input  class="form-input" id="cocktail-ing9" name="cocktail-ing9"></input>
-      </div>
-
-      <div class="field">
-        <label class="title is-6">Ingredient 10:</label>
-        <input  class="form-input" id="cocktail-ing10" name="cocktail-ing10"></input>
-      </div>
-
-
-      <div class="form-group">
-        <button type="submit" class="button is-link">Create</button>
-      </div>
-    </form>
+<form class="form-horizontal" id="cocktail-form"  >
+<fieldset>
+<!-- Text input-->
+<div class="field">
+  <label class="label" for="ct-name">Cocktail Name</label>
+  <div class="control">
+    <input id="ct-name" name="ct-name" type="text" placeholder="Enter the name of your cocktail" class="input " required="">
   </div>
+</div>
+
+<!-- Textarea -->
+<div class="field">
+  <label class="label" for="ct-desc">Cocktail Description</label>
+  <div class="control">                     
+    <textarea class="textarea" id="ct-desc" name="ct-desc">Enter a description for your yummy cocktail here!</textarea>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="field">
+  <label class="label" for="ct-cat">Cocktail Category</label>
+  <div class="control">
+  	<div class="select">
+	    <select id="ct-cat" name="ct-cat" class="">
+	      <option>Contemporary Classics</option>
+	      <option>Unforgettables</option>
+	      <option>Tropical</option>
+	      <option>Dry</option>
+	      <option>Sweet</option>
+	    </select>
+	</div>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="field">
+  <label class="label" for="ct-instr">Cocktail Instructions</label>
+  <div class="control">                     
+    <textarea class="textarea" id="ct-instr" name="ct-instr">How do you make your cocktail?</textarea>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="field">
+  <label class="label" for="ct-alc">Please choose one</label>
+  <div class="control">
+    <label class="radio" for="ct-alc-0">
+      <input type="radio" name="ct-alc" id="ct-alc-0" value="Alcoholic" checked="checked" required="required">
+      Alcoholic
+    </label>
+    <label class="radio" for="ct-alc-1">
+      <input type="radio" name="ct-alc" id="ct-alc-1" value="Non-Alcoholic" required="required">
+      Non-Alcoholic
+    </label>
+  </div>
+</div>
+<!-- Text input-->
+<div id="ingredients">
+<div class="field">
+  <button type="button" class="button is-warning my-3" id="addIngredient">Add Ingredient</button>
+  <div class="control">
+    <input id="ingredient1" name="Ingredient 1" type="text" placeholder="Ingredient 1" class="input " required="">
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+  <button type="submit" class="button is-link my-3">Create</button>
+</div>
+</fieldset>
+</form>
+</div>
 
   {{#if cocktails.length}}
   <div class="card mt-6">
@@ -111,7 +91,7 @@
     {{#each cocktails as |cocktail|}}
     <div class="card">
       <div class="card-content">
-        <h4><a href="/cocktails/{{cocktail.id}}">{{cocktail.name}}</a></h4>
+        <h4><a href="/cocktail/{{cocktail.id}}">{{cocktail.name}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="button btn-danger" data-id="{{cocktail.id}}">DELETE</button>
