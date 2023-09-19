@@ -59,4 +59,34 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.get('/check-username/:name', async (req, res) => {
+  try {
+    const user = await User.findOne({  where: {name: req.params.name } });
+    
+    if (user) {
+      res.json({ exists: true });
+      console.log(user);
+    } else {
+      res.json({ exists: false });
+    }
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to check name' });
+  }
+});
+
+
+router.get('/check-email/:email', async (req, res) => {
+  try {
+    const email = await User.findOne({  where: {email: req.params.email } });
+    
+    if (email) {
+      res.json({ exists: true });
+    } else {
+      res.json({ exists: false });
+    }
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to check email' });
+  }
+});
+
 module.exports = router;
