@@ -1,5 +1,5 @@
 <div class="card" style="background-color: rgba(0, 0, 0, 0.2)">
-  <div class="card-content">
+  <div class="card-content has-text-centered">
   
   <p class="title is-3">{{name}}</p>
   <p class="title is-1" >{{{get_emoji category}}}</p>
@@ -9,7 +9,7 @@
   <p class="mb-3"> {{category}}</p>
   <h2 class="title is-5 mb-0">Instructions to make</h2>
   <p class="mb-3">{{instructions}}</p>
-  <h2 class="title is-5 mb-0">Is it alcoholic, get you fucked up much</h2>
+  <h2 class="title is-5 mb-0">Is it alcoholic?</h2>
   <p class="mb-3">{{alcoholic}}</p>
   <h2 class="title is-5 mb-0">Ingredients</h2>
   <p>{{Ingredient1}}</p>
@@ -24,11 +24,13 @@
   <p>{{Ingredient10}}</p>
 
 
-
   <p class="mt-6">Created by {{user.name}} on {{format_date date_created}}</p>
- 
-  <p>
-    <button class="button is-link">Like this cocktail!</button>
-  </p>
+  
+  <section>
+    <button id="like-btn" data-loggedin="{{current_user_id}}" data-user="{{user.id}}" class="my-3 button is-link">Like this cocktail!</button>
+    <p class="title is-6">Likes: {{likes}}</p>
+  </section>
 </div>
 </div>
+
+<script src="../js/cocktail.js"></script>

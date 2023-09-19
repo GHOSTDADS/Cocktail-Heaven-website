@@ -8,13 +8,18 @@
       <div class="card content" style="background-color: rgba(255, 221, 87, 0.5)">
         <h2 style="text-align:center" class="title is-1">{{{get_emoji category}}}</h2>
         <h2 style="text-align:center"><a class="p-4" href="/cocktail/{{cocktail.id}}">{{cocktail.name}}</a></h2>
-        <p class="p-4">Created by {{cocktail.user.name}} on {{format_date cocktail.date_created}}</p>
+        <p class="has-text-centered p-4">Created by {{cocktail.user.name}} on {{format_date cocktail.date_created}}</p>
       </div>
       <div class="p-4">
-        <p>
-          {{cocktail.description}}
-          {{cocktail.category}}
-          {{cocktail.alcoholic}}
+        <p class="has-text-centered">
+          <strong>Description:</strong><br>
+          {{cocktail.description}} <br>
+          <strong>Category:</strong><br>
+          {{cocktail.category}} <br>
+          <strong>Category:</strong><br>
+          {{cocktail.alcoholic}}<br>
+          <strong>Like Count: </strong>
+          {{cocktail.likes}}
         </p>
       </div>
     </div>
