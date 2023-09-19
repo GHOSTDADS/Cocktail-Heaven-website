@@ -103,7 +103,7 @@ const checkEmailExists = async (email) => {
       return false;
     }
   } catch (err) {
-    console.error('Error checking email:', err);
+    console.error('Error checking email:', err);go
   }
 };
 
