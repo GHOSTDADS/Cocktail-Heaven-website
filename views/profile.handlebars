@@ -9,7 +9,7 @@
 
 <div class="card-content" style="background-color: rgba(255, 221, 87, 0.3)">
   <div class="col-md-6">
-    <h3 class="title is-3">Add a new cocktail! oh hell yeh!</h3>
+    <h3 class="title is-3 has-text-centered">Add a new cocktail recipe? oh hell yeh!</h3>
 
 <form class="form-horizontal" id="cocktail-form"  >
 <fieldset>
@@ -25,7 +25,7 @@
 <div class="field">
   <label class="label" for="ct-desc">Cocktail Description</label>
   <div class="control">                     
-    <textarea class="textarea" id="ct-desc" name="description">Enter a description for your yummy cocktail here!</textarea>
+    <textarea placeholder="Enter a description for your yummy cocktail here!" class="textarea" id="ct-desc" name="description"></textarea>
   </div>
 </div>
 
@@ -45,11 +45,11 @@
   </div>
 </div>
 
-<!-- Textarea -->
+<!-- Textarea for  -->
 <div class="field">
   <label class="label" for="ct-instr">Cocktail Instructions</label>
   <div class="control">                     
-    <textarea class="textarea" id="ct-instr" name="instructions">How do you make your cocktail?</textarea>
+    <textarea placeholder="Enter the instructions on how to make your cocktail!!" class="textarea" id="ct-instr" name="instructions"></textarea>
   </div>
 </div>
 
@@ -101,12 +101,27 @@
   </div>
   {{/if}}
 </div>
+
+{{!-- Modal for successful cocktal making --}}
 <div id="modal" class="modal">
   <div class="modal-background"></div>
   <div class="modal-content">
-    <!-- This is where the message will be placed -->
     <div class="notification is-success" id="modal-message"></div>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
+
+{{!-- Modal for successful deleteing cocktails --}}
+<div id="delete-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="notification is-danger" id="delete-modal-message"></div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+<div id="delete-loader" style="background-color: rgb(232, 189, 123)" class="pageloader is-danger is-bottom-to-top"><span class="title">NOW DEBETING COCKTAIL...</span></div>
+<div id="success-loader" style="background-color: rgb(138, 206, 223)" class="pageloader is-bottom-to-top"><span class="title">NOW CREATING COCKTAIL... <br /> RETURNING TO MAIN PAGE...</span></div>
+
 <script src="./js/profile.js"></script>

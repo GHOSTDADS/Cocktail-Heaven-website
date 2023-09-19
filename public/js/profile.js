@@ -1,22 +1,40 @@
-// const submissionFormHandler = async (event) => {
-//     event.preventDefault();
-
-
-// }
-
-
-// document
-//   .querySelector('.cocktail-form')
-//   .addEventListener('submit', submissionFormHandler);
-function executeRoute() {
+function executeRoute(x) {
     // Simulate route being successful
     if (true) {  // replace 'true' with your route success condition
-      displaySuccessMessage("Cocktail added!! nice JORB!!");
+      displaySuccessMessage(x);
     } else {
       // Handle failure
     }
+}
+
+function executeDelete(x) {
+  // Simulate route being successful
+  if (true) {  // replace 'true' with your route success condition
+    displayDeleteMessage(x);
+  } else {
+    // Handle failure
   }
+}
+
+
+function displayDeleteMessage(message) {
+  const modal = document.getElementById("delete-modal");
+  const modalMessage = document.getElementById("delete-modal-message");
+  const closeModal = modal.querySelector(".modal-close");
   
+  modalMessage.textContent = message;
+  modal.classList.add("is-active");
+  
+  closeModal.addEventListener("click", function() {
+    modal.classList.remove("is-active");
+    //takes you back to homepage after making a cocktail
+    document.location.replace('/profile');
+  });
+}
+
+
+
+
   function displaySuccessMessage(message) {
     const modal = document.getElementById("modal");
     const modalMessage = document.getElementById("modal-message");
@@ -27,6 +45,8 @@ function executeRoute() {
   
     closeModal.addEventListener("click", function() {
       modal.classList.remove("is-active");
+      //takes you back to homepage after making a cocktail
+      document.location.replace('/');
     });
   }
   
@@ -34,8 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const cocktailSubmit = document.getElementById('cocktail-form');
     const ingredientForm = document.getElementById('ingredients');
     const addIngredientButton = document.getElementById('addIngredient');
+    // const deleteCocktailBtn = document.querySelectorAll('.btn-danger');
     let ingredientCounter = 1;
 
+    //event listner for adding more ingredient slots on the form
     addIngredientButton.addEventListener('click', function () {
         if(ingredientCounter <= 9){
         ingredientCounter++;
@@ -54,6 +76,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    //event listner for deleting cocktails youve made.
+    document.addEventListener('click', function (e) {
+      if (e.target.closest(".btn-danger")){
+        let target = e.target.closest('.btn-danger');
+        let targetID = target.dataset.id;
+        console.log('/api/cocktails/'+targetID);
+
+
+        fetch(('/api/cocktails/'+targetID), {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server
+            // executeDelete( "COCKTAIL DEBETED");
+            
+        var pageloader = document.getElementById('delete-loader');
+        if (pageloader) {
+          pageloader.classList.add('is-active');
+          var pageloaderTimeout = setTimeout( function() {
+          pageloader.classList.remove('is-active');
+          clearTimeout(pageloaderTimeout);
+          document.location.replace('/profile');
+        }, 3000 );
+        }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            executeDelete( "OH NO COCKTAIL couldnt be debeted: \n" + error);
+        });
+      }
+ 
+
+    });
+
+    //event listner for adding cocktails to database.
     cocktailSubmit.addEventListener('submit', function (e) {
         e.preventDefault();
         const formData = new FormData(cocktailSubmit);
@@ -61,9 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const [key, value] of formData.entries()) {
             ingredients[key] = value;
         }
-        console.log(JSON.stringify(ingredients));
-        // Send ingredients data to your backend API using curl or fetch
-        // Example using fetch:
+        // Send ingredients data to fetch api/cocktails POST route to add to database.
         fetch('/api/cocktails', {
             method: 'POST',
             headers: {
@@ -74,11 +131,19 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             // Handle the response from the server
-            console.log(data);
-            executeRoute();
+            var pageloader = document.getElementById('success-loader');
+            if (pageloader) {
+              pageloader.classList.add('is-active');
+              var pageloaderTimeout = setTimeout( function() {
+              pageloader.classList.remove('is-active');
+              clearTimeout(pageloaderTimeout);
+              document.location.replace('/');
+            }, 3000 );
+            }
         })
         .catch(error => {
             console.error('Error:', error);
+            executeDelete( "OH NO COCKTAIL couldnt be created: \n" + error);
         });
     });
 });

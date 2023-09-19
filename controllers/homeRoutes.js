@@ -28,13 +28,13 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/cocktail/:id', withAuth, async (req, res) => {
-  console.log("test");
+
   try {
     const cocktailData = await Cocktail.findByPk(req.params.id,{
      include: [
       {
         model: User,
-        attributes: ['name']
+        attributes: ['id', 'name']
       }
      ]    
     });
@@ -43,6 +43,7 @@ router.get('/cocktail/:id', withAuth, async (req, res) => {
 
     res.render('cocktail', {
       ...cocktail,
+      current_user_id: req.session.user_id,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

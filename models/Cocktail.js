@@ -64,6 +64,10 @@ Cocktail.init(
         Ingredient10: {
             type: DataTypes.STRING,
         },
+        likes: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
