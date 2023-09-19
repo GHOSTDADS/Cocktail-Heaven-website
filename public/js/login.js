@@ -103,7 +103,7 @@ const checkEmailExists = async (email) => {
       return false;
     }
   } catch (err) {
-    console.error('Error checking email:', err);go
+    console.error('Error checking email:', err);
   }
 };
 
@@ -128,8 +128,10 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const tC = document.querySelector('#tC');
+  
 
-  if (name && email && password) {
+  if (name && email && password && tC.checked) {
     const response = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
@@ -152,3 +154,5 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+
+

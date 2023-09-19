@@ -83,4 +83,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/terms-and-conditions', (req, res) => {
+  res.render('termsAndConditions'); // This refers to 'termsAndConditions.hbs' file in the views folder.
+});
+
+
+
 module.exports = router;
