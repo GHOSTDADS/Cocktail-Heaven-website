@@ -2,24 +2,16 @@ const router = require('express').Router();
 const { User,Cocktail } = require('../models');
 const withAuth = require('../utils/auth');
 
-// TODO: Add a comment describing the functionality of the withAuth middleware
+// GET route with middleware to check if logged in before loading, gets all cocktail table data to pass to the homepage handlebars file.
 router.get('/', withAuth, async (req, res) => {
-  
   try {
-    const cocktailData = await Cocktail.findAll({
-    //  include: [
-    //   {
-    //     model: User,
-    //     attributes: ['name']
-    //   }
-    //  ]   
+    const cocktailData = await Cocktail.findAll({ 
      });
 
     const cocktails = cocktailData.map((cocktail) => cocktail.get({ plain: true }));
 
     res.render('homepage', {
       cocktails,
-      // TODO: Add a comment describing the functionality of this property
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -27,8 +19,8 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+//GET route to grab a single cocktails data from cocktail table with the user id and name that created the cocktail, and pass that through to the cocktail handlebars file.
 router.get('/cocktail/:id', withAuth, async (req, res) => {
-
   try {
     const cocktailData = await Cocktail.findByPk(req.params.id,{
      include: [
@@ -51,7 +43,7 @@ router.get('/cocktail/:id', withAuth, async (req, res) => {
   }
 });
 
-
+//GET route that gets the logged in users data from  the user table and passes it through to the profile handlebars file.
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id,{
@@ -63,7 +55,6 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      // TODO: Add a comment describing the functionality of this property
       logged_in: true,
     });
   } catch (err) {
@@ -72,10 +63,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
-
-
 router.get('/login', (req, res) => {
-  // TODO: Add a comment describing the functionality of this if statement
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -84,10 +72,9 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
 router.get('/terms-and-conditions', (req, res) => {
   res.render('termsAndConditions'); // This refers to 'termsAndConditions.hbs' file in the views folder.
 });
-
-
 
 module.exports = router;

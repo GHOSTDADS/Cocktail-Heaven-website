@@ -20,6 +20,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+
 const checkUsernameExists = async (username) => {
   try {
     const response = await fetch(`/api/users/check-username/${username}`);
@@ -63,7 +64,6 @@ document.querySelector('#username-signup').addEventListener('blur', async (event
     const exists = await checkUsernameExists(username);
     if (exists) {
       alert('Username already taken!');
-      // Alternatively, you can provide a more user-friendly feedback, e.g., changing input color or displaying a message on the page.
     }
   }
 });
@@ -113,14 +113,9 @@ document.querySelector('#email-signup').addEventListener('blur', async (event) =
     const exists = await checkEmailExists(email);
     if (exists) {
       alert('Email already taken!');
-      // Alternatively, you can provide a more user-friendly feedback, e.g., changing input color or displaying a message on the page.
     }
   }
 });
-
-
-
-
 
 const signupFormHandler = async (event) => {
   event.preventDefault();

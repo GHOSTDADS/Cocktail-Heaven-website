@@ -1,36 +1,38 @@
 <div class="card" style="background-color: rgba(0, 0, 0, 0.2)">
   <div class="card-content has-text-centered">
-  
-  <p class="title is-3">{{name}}</p>
-  <p class="title is-1" >{{{get_emoji category}}}</p>
-  <h2 class="title is-5 mb-0">Description</h2>
-  <p class="mb-3">{{description}}</p>
-  <h2 class="title is-5 mb-0">Category</h2>
-  <p class="mb-3"> {{category}}</p>
-  <h2 class="title is-5 mb-0">Instructions to make</h2>
-  <p class="mb-3">{{instructions}}</p>
-  <h2 class="title is-5 mb-0">Is it alcoholic?</h2>
-  <p class="mb-3">{{alcoholic}}</p>
-  <h2 class="title is-5 mb-0">Ingredients</h2>
-  <p>{{Ingredient1}}</p>
-  <p>{{Ingredient2}}</p>
-  <p>{{Ingredient3}}</p>
-  <p>{{Ingredient4}}</p>
-  <p>{{Ingredient5}}</p>
-  <p>{{Ingredient6}}</p>
-  <p>{{Ingredient7}}</p>
-  <p>{{Ingredient8}}</p>
-  <p>{{Ingredient9}}</p>
-  <p>{{Ingredient10}}</p>
+    <p class="title is-3">{{name}}</p>
+    <p class="title is-1" >{{{get_emoji category}}}</p>
 
+    <h2 class="title is-5 mb-0">Description</h2>
+    <p class="mb-3">{{description}}</p>
 
-  <p class="mt-6">Created by {{user.name}} on {{format_date date_created}}</p>
+    <h2 class="title is-5 mb-0">Category</h2>
+    <p class="mb-3"> {{category}}</p>
+
+    <h2 class="title is-5 mb-0">Instructions to make</h2>
+    <p class="mb-3">{{instructions}}</p>
+
+    <h2 class="title is-5 mb-0">Is it alcoholic?</h2>
+    <p class="mb-3">{{alcoholic}}</p>
+
+    <h2 class="title is-5 mb-0">Ingredients</h2>
+    <p>{{Ingredient1}}</p>
+    <p>{{Ingredient2}}</p>
+    <p>{{Ingredient3}}</p>
+    <p>{{Ingredient4}}</p>
+    <p>{{Ingredient5}}</p>
+    <p>{{Ingredient6}}</p>
+    <p>{{Ingredient7}}</p>
+    <p>{{Ingredient8}}</p>
+    <p>{{Ingredient9}}</p>
+    <p>{{Ingredient10}}</p>
+    <p class="mt-6 title is-6">Created by {{user.name}} on {{format_date date_created}}</p>
   
-  <section>
-    <button id="like-btn" data-loggedin="{{current_user_id}}" data-user="{{user.id}}" class="my-3 button is-link">Like this cocktail!</button>
-    <p class="title is-6">Likes: {{likes}}</p>
-  </section>
-</div>
+    <section id="like-section" data-loggedin="{{current_user_id}}" data-user="{{user.id}}">
+      <button id="like-btn" class="my-3 button is-link">Like this cocktail!</button>
+      <p class="title is-6 my-2" id="like-counter" data-cocktail="{{id}}" data-count={{likes}}>Likes: {{likes}}</p>
+    </section>
+  </div>
 </div>
 
 <script src="../js/cocktail.js"></script>

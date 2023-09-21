@@ -7,8 +7,7 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
-// TODO: Add a comment describing the functionality of this expression
-// This sets up the session
+//sets up the session
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -16,8 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-// TODO: Add a comment describing the functionality of this object
-// These are the session details  
+//These are the session details  
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -28,8 +26,6 @@ const sess = {
   })
 };
 
-// TODO: Add a comment describing the functionality of this statement
-// These are all the includes thats set up where everything is
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

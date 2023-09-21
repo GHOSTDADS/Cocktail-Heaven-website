@@ -6,84 +6,84 @@
 
 <div class="divider is-warning"></div>
 
-
 <div class="card-content" style="background-color: rgba(255, 221, 87, 0.3)">
   <div class="col-md-6">
     <h3 class="title is-3 has-text-centered">Add a new cocktail recipe? oh hell yeh!</h3>
 
-<form class="form-horizontal" id="cocktail-form"  >
-<fieldset>
-<!-- Text input-->
-<div class="field">
-  <label class="label" for="ct-name">Cocktail Name</label>
-  <div class="control">
-    <input id="ct-name" name="name" type="text" placeholder="Enter the name of your cocktail" class="input" required="">
-  </div>
-</div>
+    <form class="form-horizontal" id="cocktail-form">
+      <fieldset>
+        <!-- cocktail Name text field-->
+        <div class="field">
+          <label class="label" for="ct-name">Cocktail Name</label>
+          <div class="control">
+            <input id="ct-name" name="name" type="text" placeholder="Enter the name of your cocktail" class="input" required="">
+          </div>
+        </div>
 
-<!-- Textarea -->
-<div class="field">
-  <label class="label" for="ct-desc">Cocktail Description</label>
-  <div class="control">                     
-    <textarea placeholder="Enter a description for your yummy cocktail here!" class="textarea" id="ct-desc" name="description"></textarea>
-  </div>
-</div>
+        <!-- cocktail Description textarea-->
+        <div class="field">
+          <label class="label" for="ct-desc">Cocktail Description</label>
+          <div class="control">                     
+            <textarea placeholder="Enter a description for your yummy cocktail here!" class="textarea" id="ct-desc" name="description"></textarea>
+          </div>
+        </div>
 
-<!-- Select Basic -->
-<div class="field">
-  <label class="label" for="ct-cat">Cocktail Category</label>
-  <div class="control">
-  	<div class="select">
-	    <select id="ct-cat" name="category" class="">
-	      <option>Contemporary Classics</option>
-	      <option>Unforgettables</option>
-	      <option>Tropical</option>
-	      <option>Dry</option>
-	      <option>Sweet</option>
-	    </select>
-	</div>
-  </div>
-</div>
+        <!-- Cocktail Category select box-->
+        <div class="field">
+          <label class="label" for="ct-cat">Cocktail Category</label>
+          <div class="control">
+  	        <div class="select">
+	            <select id="ct-cat" name="category" class="">
+                <option>Contemporary Classics</option>
+                <option>Unforgettables</option>
+                <option>Tropical</option>
+                <option>Dry</option>
+                <option>Sweet</option>
+              </select>
+	          </div>
+          </div>
+        </div>
 
-<!-- Textarea for  -->
-<div class="field">
-  <label class="label" for="ct-instr">Cocktail Instructions</label>
-  <div class="control">                     
-    <textarea placeholder="Enter the instructions on how to make your cocktail!!" class="textarea" id="ct-instr" name="instructions"></textarea>
-  </div>
-</div>
+        <!-- Cocktail Instructions textarea -->
+        <div class="field">
+          <label class="label" for="ct-instr">Cocktail Instructions</label>
+          <div class="control">                     
+            <textarea placeholder="Enter the instructions on how to make your cocktail!!" class="textarea" id="ct-instr" name="instructions"></textarea>
+          </div>
+        </div>
 
-<!-- Multiple Radios -->
-<div class="field">
-  <label class="label" for="ct-alc">Please choose one</label>
-  <div class="control">
-    <label class="radio" for="ct-alc-0">
-      <input type="radio" name="alcoholic" id="ct-alc-0" value="Alcoholic" checked="checked" required="required">
-      Alcoholic
-    </label>
-    <label class="radio" for="ct-alc-1">
-      <input type="radio" name="alcoholic" id="ct-alc-1" value="Non-Alcoholic" required="required">
-      Non-Alcoholic
-    </label>
-  </div>
-</div>
-<!-- Text input-->
-<div id="ingredients">
-  <div class="field">
-  <button type="button" class="button is-warning my-3" id="addIngredient">Add   Ingredient</button>
-  <div class="control">
-    <input id="Ingredient1" name="Ingredient 1" type="text" placeholder="Ingredient 1" class="input " required="">
-  </div>
-  </div>
-</div>
+        <!-- Alcoholic or Non-Alcoholic Radios -->
+        <div class="field">
+          <label class="label" for="ct-alc">Please choose one</label>
+          <div class="control">
+            <label class="radio" for="ct-alc-0">
+              <input type="radio" name="alcoholic" id="ct-alc-0" value="Alcoholic" checked="checked" required="required">Alcoholic
+            </label>
 
-<div class="form-group">
-  <button type="submit" class="button is-link my-3">Create</button>
-</div>
-</fieldset>
-</form>
-</div>
+            <label class="radio" for="ct-alc-1">
+              <input type="radio" name="alcoholic" id="ct-alc-1" value="Non-Alcoholic" required="required">Non-Alcoholic
+            </label>
+          </div>
+        </div>
 
+        <!-- Ingredient text input-->
+        <div id="ingredients">
+          <div class="field">
+            <button type="button" class="button is-warning my-3" id="addIngredient">Add   Ingredient</button>
+            <div class="control">
+              <input id="Ingredient1" name="Ingredient 1" type="text" placeholder="Ingredient 1" class="input " required="">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="button is-link my-3">Create</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  {{!-- checks to see if logged in user has craeted any cocnktails, if so displays them, witha  button to delete each one --}}
   {{#if cocktails.length}}
   <div class="card mt-6">
     <h3 class="title is-4">Current Cocktails you have added:</h3>
@@ -111,7 +111,7 @@
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
 
-{{!-- Modal for successful deleteing cocktails --}}
+{{!-- Modal for deleteing cocktails --}}
 <div id="delete-modal" class="modal">
   <div class="modal-background"></div>
   <div class="modal-content">
@@ -120,7 +120,7 @@
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
 
-
+{{!-- page loaders for when deleteing or adding cocktails --}}
 <div id="delete-loader" style="background-color: rgb(232, 189, 123)" class="pageloader is-danger is-bottom-to-top"><span class="title">NOW DEBETING COCKTAIL...</span></div>
 <div id="success-loader" style="background-color: rgb(138, 206, 223)" class="pageloader is-bottom-to-top"><span class="title">NOW CREATING COCKTAIL... <br /> RETURNING TO MAIN PAGE...</span></div>
 
