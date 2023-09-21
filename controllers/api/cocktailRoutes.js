@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Cocktail } = require('../../models');
 
+//POST route for adding new cocktails
 router.post('/', async (req, res) => {
   try {
     const newCocktail = await Cocktail.create({
@@ -14,6 +15,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//DEL route for deleting cocktails based on ID passed through
 router.delete('/:id', async (req, res) => {
   try {
     const cocktailData = await Cocktail.destroy({
@@ -28,6 +30,25 @@ router.delete('/:id', async (req, res) => {
     }
 
     res.status(200).json({ message: "cocktail destroed" });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//PUT route for updating 'likes' count for he cocktail witht he matching ID passed through
+router.put('/:id', async (req,res) => {
+  try {
+    const cocktail = await Cocktail.update(
+      {
+        likes: req.body.likes,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.status(200).json(cocktail);
   } catch (err) {
     res.status(500).json(err);
   }

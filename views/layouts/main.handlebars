@@ -30,14 +30,9 @@
         <a class="navbar-item has-text-primary has-text-weight-bold" href="/">
           Home
         </a>
-
-        {{!-- <a class="navbar-item has-text-primary has-text-weight-bold" href="/cocktails">
-          Cocktails
-        </a> --}}
-
+      </div>
     </div>
 
-  
     {{#if logged_in}}
     <div class="navbar-end">
       <div class="navbar-item">
@@ -52,24 +47,19 @@
       </div>
     </div>
     {{/if}}
-
   </nav>
 
   <main>
-
     <div class="columns is-centered">
-  
-  <div>
-
-      {{{ body }}} 
-  </div>
-</div>
-    
+      <div>
+        {{{ body }}} 
+      </div>
+    </div>
   </main>
 
-
+{{!-- whats the deal with the footer? --}}
   <footer>
-      <h1 class="by legends, otherwise known as AlexCam Corporation"></h1>
+    <h1 class="by legends, otherwise known as AlexCam Corporation"></h1>
   </footer>
 
    {{#if logged_in}}
@@ -77,6 +67,6 @@
    
   {{/if}}
   <script src="/js/hamburger.js"></script>
-</body>
 
+</body>
 </html>

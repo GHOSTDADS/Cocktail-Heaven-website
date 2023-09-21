@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//POST route for adding new users
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +17,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//POST route for loging users into the site
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -59,6 +61,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//GET route for comparing if a name exists in the user table already.
 router.get('/check-username/:name', async (req, res) => {
   try {
     const user = await User.findOne({  where: {name: req.params.name } });
@@ -74,7 +77,7 @@ router.get('/check-username/:name', async (req, res) => {
   }
 });
 
-
+//GET route for comparing if a email exists in the user table already.
 router.get('/check-email/:email', async (req, res) => {
   try {
     const email = await User.findOne({  where: {email: req.params.email } });

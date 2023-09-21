@@ -1,118 +1,119 @@
 <div class="column is-half is-offset-one-quarter ">
-
 </div>
 
 <h1 class="title is-1">Get Started - yeah yeah</h1>
 
-  <div class="card container-max-width mb-6" style="background-color: rgba(255, 221, 87, 0.5)">
-    {{!-- Login --}}
-    <h2 class="title is-2 p-4">Login</h2>
-    <form class="form login-form card-content">
+<div class="card container-max-width mb-6" style="background-color: rgba(255, 221, 87, 0.5)">
+  {{!-- Login --}}
+  <h2 class="title is-2 p-4">Login</h2>
+  <form class="form login-form card-content">
 
-      <div class="field">
-    <label class="title is-6">Email:</label>
-    <div class="control has-icons-left has-icons-right">
+    <div class="field">
+      <label class="title is-6">Email:</label>
+      <div class="control has-icons-left has-icons-right">
         <input id="email-login" class="input is-success" type="email" placeholder="youremail@">
+
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
+
         <span class="icon is-small is-right">
           <i class="fas fa-check"></i>
         </span>
-    </div>
+      </div>
     <!-- <p class="help is-danger">This email is invalid</p> -->
-</div>
-
-        {{!-- <p class="help is-danger">This email is invalid</p> --}}
+    </div>
+  {{!-- <p class="help is-danger">This email is invalid</p> --}}
         
 
 
-<div class="field">
+  <div class="field">
     <label class="label">Password:</label>
     <div class="control has-icons-left">
-        <input id="password-login" class="input is-success" type="password"/>
-        <span class="icon is-small is-left">
-            <i class="fas fa-key"></i>
-        </span>
+      <input id="password-login" class="input is-success" type="password"/>
+      <span class="icon is-small is-left">
+        <i class="fas fa-key"></i>
+      </span>
     </div>
-</div>
-<div class="form-group">
+  </div>
+
+  <div class="form-group">
     <button class="button is-link" type="submit">login</button>
-</div>
-</form>
-</div>
-
-
-<div class="divider is-warning title is-5">OR</div>
-
-
-
-{{!-- Signup --}}
-  <div class="card $container-max-width" style="background-color: rgba(255, 221, 87, 0.5)">
-    <h2 class="title is-2 p-4">Signup</h2>
-    <form class="form signup-form card-content">
-
-<div class="field">
-  <label class="label">Username</label>
-
-  <div class="control has-icons-left has-icons-right">
-    <input id="username-signup" class="input is-success" type="text" placeholder="make a new username">
-    <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i id="username-signup-icon" class="fas fa-check"></i>
-    </span>
   </div>
-  <p id="username-signup-help" class="help"></p>
-</div>
-
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control has-icons-left has-icons-right">
-    <input id="email-signup" class="input is-success" type="email" placeholder="youremail@">
-    <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i id="email-signup-icon" class="fas fa-check"></i>
-    </span>
-  </div>
-  <p id="email-signup-help" class="help"></p>
-</div>
-
-<div class="field">
-    <label class="label">Password:</label>
-    <div class="control has-icons-left">
-        <input id="password-signup" class="input is-success" type="password">
-        <span class="icon is-small is-left">
-            <i class="fas fa-key"></i>
-        </span>
-    </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label class="checkbox">
-      <input type="checkbox" id="tC">
-      I agree to the <a href="/terms-and-conditions">terms and conditions</a>
-    </label>
-  </div>
-</div>
-
-
-
-<div class="field is-grouped">
-  <div class="control">
-    <button class="button is-link">Submit</button>
-  </div>
-  <div class="control">
-    <button class="button is-link is-light">Cancel</button>
-  </div>
-</div>
   </form>
 </div>
+
+{{!-- page divider --}}
+<div class="divider is-warning title is-5">OR</div>
+
+{{!-- Signup --}}
+<div class="card $container-max-width" style="background-color: rgba(255, 221, 87, 0.5)">
+  <h2 class="title is-2 p-4">Signup</h2>
+  <form class="form signup-form card-content">
+
+    <div class="field">
+      <label class="label">Username</label>
+
+      <div class="control has-icons-left has-icons-right">
+        <input id="username-signup" class="input is-success" type="text" placeholder="make a new username">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+
+        <span class="icon is-small is-right">
+          <i id="username-signup-icon" class="fas fa-check"></i>
+        </span>
+      </div>
+
+      <p id="username-signup-help" class="help"></p>
+    </div>
+
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <input id="email-signup" class="input is-success" type="email" placeholder="youremail@">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+
+        <span class="icon is-small is-right">
+          <i id="email-signup-icon" class="fas fa-check"></i>
+        </span>
+      </div>
+
+      <p id="email-signup-help" class="help"></p>
+    </div>
+
+    <div class="field">
+      <label class="label">Password:</label>
+      <div class="control has-icons-left">
+        <input id="password-signup" class="input is-success" type="password">
+        <span class="icon is-small is-left">
+          <i class="fas fa-key"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox" id="tC">
+          I agree to the <a href="/terms-and-conditions">terms and conditions</a>
+        </label>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Submit</button>
+      </div>
+
+      <div class="control">
+        <button class="button is-link is-light">Cancel</button>
+      </div>
+    </div>
+
+  </form>
 </div>
 
-</div>
 <script src="/js/login.js"></script>

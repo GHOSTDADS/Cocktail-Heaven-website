@@ -1,8 +1,6 @@
 module.exports = {
-  
+  //function to give emojis to diffenent cocktal catergories
   get_emoji: function(category) {
-    console.log("Category is:", category);
-
     const cocktail_emojis = {
       "Contemporary Classics": "🍸",
       "Unforgettables": "🍹",
@@ -16,12 +14,8 @@ module.exports = {
     return `<span for="img" aria-label="${category}">${emoji}</span>`;
   },
 
+  //fucntion to formate the date
   format_date: (date) => {
     return date.toLocaleDateString();
   },
-
-  format_amount: (amount) => {
-    return parseInt(amount).toLocaleString();
-  }
-
 };
